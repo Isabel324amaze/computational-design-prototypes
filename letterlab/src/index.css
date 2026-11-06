@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: #FAF8F5;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #D8F3DC;
+    color: #1B4D3E;
+  }
+}
+
+.font-serif {
+  font-family: 'Newsreader', 'Instrument Serif', Georgia, Cambria, serif;
+}
+
+.font-mono {
+  font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Subtle stationery paper texture line */
+.letter-paper-margin {
+  border-left: 2px solid rgba(220, 38, 38, 0.15);
+  padding-left: 1rem;
+}
