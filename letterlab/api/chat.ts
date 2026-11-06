@@ -102,7 +102,7 @@ export default async function handler(req: any, res: any) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey || apiKey.trim() === '') {
       return res.status(400).json({
-        error: 'GEMINI_API_KEY is not configured on the server. Please ensure an API key is set in Settings > Secrets.',
+        error: 'GEMINI_API_KEY is not configured on the server. Set it as a server-side environment variable and redeploy (Vercel: Project Settings > Environment Variables).',
       });
     }
 
