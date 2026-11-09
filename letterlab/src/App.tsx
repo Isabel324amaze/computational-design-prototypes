@@ -161,7 +161,7 @@ export default function App() {
         const requiredFields = ['recipient', 'purpose', 'originalDeadline', 'requestedDeadline', 'truthfulReason'] as const;
         for (const field of requiredFields) {
           const value = data.facts[field];
-          if (typeof value === 'string' && /^(?:null)?$/i.test(value.trim())) {
+          if (typeof value === 'string' && /^(?:null|unknown|not provided)?$/i.test(value.trim())) {
             data.facts[field] = null;
           }
         }
