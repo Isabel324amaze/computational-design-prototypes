@@ -166,7 +166,7 @@ The assistant aims to use only supplied facts; users must review before sending.
 
     async function generateWithFallback() {
       // Prioritize flash models with bounded 18s per-model budget
-      const candidateModels = ['gemini-3.8-flash', 'gemini-3.1-flash-lite', 'gemini-flash-latest'];
+      const candidateModels = ['gemini-3.1-flash-lite', 'gemini-3.8-flash', 'gemini-flash-latest'];
       let lastErr: any = null;
 
       for (const modelName of candidateModels) {

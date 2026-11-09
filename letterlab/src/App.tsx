@@ -157,6 +157,15 @@ export default function App() {
       }
       const data: AgentApiResponse = await response.json();
       if (data.emailDraft) data.emailDraft = normalizeDraft(data.emailDraft);
+      if (data.facts) {
+        const requiredFields = ['recipient', 'purpose', 'originalDeadline', 'requestedDeadline', 'truthfulReason'] as const;
+        for (const field of requiredFields) {
+          const value = data.facts[field];
+          if (typeof value === 'string' && /^(?:null)?$/i.test(value.trim())) {
+            data.facts[field] = null;
+          }
+        }
+      }
       if (data.facts && !referenceFacts.trim()) {
         data.facts.coursePolicy = 'Unknown (no syllabus policy provided)';
       }
